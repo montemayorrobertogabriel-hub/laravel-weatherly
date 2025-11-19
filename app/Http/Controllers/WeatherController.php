@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Http;
 
 class WeatherController extends Controller
 {
+
+    public function showWeather()
+    {
+        return view('weather');  // Make sure you have a weather.blade.php file in resources/views
+    }   
     public function search(Request $request)
     {
         $city = $request->query('city');

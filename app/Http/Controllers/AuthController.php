@@ -24,7 +24,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/')->with('success', 'Logged in!');
+            return redirect('/weather')->with('success', 'Logged in!');
         }
 
         return back()->withErrors(['email' => 'Invalid email or password']);
@@ -53,7 +53,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Account created!');
+        return redirect('/weather')->with('success', 'Account created!');
     }
 
     // Logout
